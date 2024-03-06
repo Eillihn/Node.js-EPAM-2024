@@ -12,6 +12,7 @@
     "quotes": ["error", "single"],
     "indent": ["error", 2],
     "comma-dangle": ["error", "never"],
-    "no-console": "off"
+    "no-console": "off",
+    "no-use-before-define": ["warning"]
   }
 }
