@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "module": "node16",
+    "target": "ES2022",
+    "outDir": "./dist",
+    "rootDir": "./"
+  },
+  "include": ["**/*.ts"],
+  "exclude":[
+    "./node_modules"
+  ]
+}
