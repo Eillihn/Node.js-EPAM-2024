@@ -4,7 +4,7 @@ import fs from 'fs';
 
 run();
 
-function run():void {
+function run(): void {
   try {
     setInterval(consoleLog, 100);
     setInterval(fileLog, 1000);
@@ -13,22 +13,24 @@ function run():void {
   }
 }
 
-async function consoleLog():Promise<void> {
-  const processDetails:string = await getProcessDetails();
+async function consoleLog(): Promise<void> {
+  const processDetails: string = await getProcessDetails();
   writeToCommandLine(`${processDetails.replace(/[\r\n]/g, '')}\r`);
 }
-async function fileLog():Promise<void> {
-  const processDetails:string = await getProcessDetails();
+async function fileLog(): Promise<void> {
+  const processDetails: string = await getProcessDetails();
   writeToLogFile(processDetails);
 }
 
-function getProcessDetails():Promise<string|never> {
+function getProcessDetails(): Promise<string | never> {
   return new Promise((resolve, reject) => {
-    const command:string = getCommand();
+    const command: string = getCommand();
     if (!command) {
       reject(new Error('Unsupported platform'));
     } else {
-      const child:childProcess.ChildProcess = childProcess.fork('src/task2/executeCommand.ts');
+      const child: childProcess.ChildProcess = childProcess.fork(
+        'src/task2/executeCommand.ts',
+      );
       child.send(command);
       child.on('message', resolve);
       child.on('error', reject);
@@ -36,24 +38,28 @@ function getProcessDetails():Promise<string|never> {
   });
 }
 
-function writeToCommandLine(processDetails: string):void {
+function writeToCommandLine(processDetails: string): void {
   process.stdout.clearLine(0);
   process.stdout.cursorTo(0);
   process.stdout.write(processDetails);
 }
 
-function writeToLogFile(data: string):void {
-  const logFileName:string = 'src/task2/activityMonitor.log';
-  const logData:string = `${Date.now()} : ${data}\n`;
+function writeToLogFile(data: string): void {
+  const logFileName: string = 'src/task2/activityMonitor.log';
+  const logData: string = `${Date.now()} : ${data}\n`;
 
-  fs.appendFile(logFileName, logData, (err:NodeJS.ErrnoException|null):void => {
-    if (err) {
-      console.error('Error writing to log file:', err);
-    }
-  });
+  fs.appendFile(
+    logFileName,
+    logData,
+    (err: NodeJS.ErrnoException | null): void => {
+      if (err) {
+        console.error('Error writing to log file:', err);
+      }
+    },
+  );
 }
 
-function getCommand():string {
+function getCommand(): string {
   const platform: NodeJS.Platform = os.platform();
   switch (platform) {
   case 'win32':

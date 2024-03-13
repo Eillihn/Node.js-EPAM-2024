@@ -1,32 +1,39 @@
 {
-  "name": "node.js-epam-2024",
-  "type": "module",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/task1/index.ts",
-  "scripts": {
-    "start:task1": "tsx watch src/task1/index.ts",
-    "start:task2": "tsx watch src/task2/activityMonitor.ts",
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Eillihn/Node.js-EPAM-2024.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Eillihn/Node.js-EPAM-2024/issues"
-  },
-  "homepage": "https://github.com/Eillihn/Node.js-EPAM-2024#readme",
-  "devDependencies": {
-    "@types/node": "^20.11.25",
-    "eslint": "^8.57.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "tsx": "^4.7.1",
-    "typescript": "^5.3.3"
-  }
+    "name": "node.js-epam-2024",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/task1/index.ts",
+    "scripts": {
+        "start:task1": "tsx watch src/task1/index.ts",
+        "start:task2": "tsx watch src/task2/activityMonitor.ts",
+        "start:task3": "tsx watch src/task3/index.ts",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Eillihn/Node.js-EPAM-2024.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Eillihn/Node.js-EPAM-2024/issues"
+    },
+    "homepage": "https://github.com/Eillihn/Node.js-EPAM-2024#readme",
+    "devDependencies": {
+        "@types/node": "^20.11.26",
+        "@typescript-eslint/eslint-plugin": "^7.2.0",
+        "@typescript-eslint/parser": "^7.2.0",
+        "eslint": "^8.57.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.29.1",
+        "tsx": "^4.7.1",
+        "typescript": "^5.4.2"
+    },
+    "dependencies": {
+        "csvtojson": "^2.0.10"
+    }
 }
