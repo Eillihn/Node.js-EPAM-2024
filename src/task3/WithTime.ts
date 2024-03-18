@@ -1,6 +1,6 @@
 import * as console from 'console';
-import EventEmitter from './EventEmitter.js';
-import { AnyArg, AsyncFunction, EventName } from './types.js';
+import EventEmitter from './EventEmitter';
+import { AnyArg, AsyncFunction, EventName } from './types';
 
 export default class WithTime extends EventEmitter {
   async execute(asyncFunc: AsyncFunction, ...args: AnyArg[]): Promise<void> {

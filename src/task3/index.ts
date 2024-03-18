@@ -1,6 +1,6 @@
-import testEventEmitter from './tests/testEventEmitter.js';
-import testEventEmitterWithTime from './tests/testEventEmitterWithTime.js';
-import testConverter from './tests/testConverter.js';
+import testEventEmitter from './tests/testEventEmitter';
+import testEventEmitterWithTime from './tests/testEventEmitterWithTime';
+import testConverter from './tests/testConverter';
 
 testEventEmitter();
 testEventEmitterWithTime();

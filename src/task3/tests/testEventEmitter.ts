@@ -1,5 +1,5 @@
-import EventEmitter from '../EventEmitter.js';
-import { EventName } from '../types.js';
+import EventEmitter from '../EventEmitter';
+import { EventName } from '../types';
 
 export default function (): void {
   const myEmitter = new EventEmitter();

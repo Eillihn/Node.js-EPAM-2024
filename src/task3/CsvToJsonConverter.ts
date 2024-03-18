@@ -1,7 +1,7 @@
 import csv from 'csvtojson';
 import * as fs from 'fs';
-import { EventName } from './types.js';
-import type { Converter } from 'csvtojson/v2/Converter.js';
+import { EventName } from './types';
+import type { Converter } from 'csvtojson/v2/Converter';
 
 interface CSVData {
   Book: string;

@@ -1,4 +1,4 @@
-import { AnyArg, EventListener, EventName } from './types.js';
+import { AnyArg, EventListener, EventName } from './types';
 
 export default class EventEmitter {
   private listeners: { [key in EventName]?: EventListener[] } = {};

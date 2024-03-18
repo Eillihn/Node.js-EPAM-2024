@@ -1,5 +1,5 @@
-import WithTime from '../WithTime.js';
-import { AnyFunction, EventName } from '../types.js';
+import WithTime from '../WithTime';
+import { AnyFunction, EventName } from '../types';
 
 export default function (): void {
   const fetchFromUrl = async (url: string, cb: AnyFunction): Promise<void> => {
