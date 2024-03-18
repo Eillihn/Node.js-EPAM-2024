@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
-    "lib": ["ES2023"],
-    "module": "node16",
-    "target": "ES2022",
+    "target": "ESNext",
+    "module": "NodeNext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": false,
     "outDir": "./dist",
     "rootDir": "./"
   },
