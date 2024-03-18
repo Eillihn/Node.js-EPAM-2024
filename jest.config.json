@@ -1,0 +1,12 @@
+{
+  "testEnvironment": "node",
+  "roots": ["./src"],
+  "preset": "ts-jest/presets/default-esm",
+  "collectCoverageFrom": ["src/task4/**"],
+  "coverageReporters": ["text"],
+  "coverageThreshold": {
+    "global": {
+      "lines": 85
+    }
+  }
+}
