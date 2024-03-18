@@ -62,3 +62,15 @@ getRandomNumber()
 ```javascript
 npm run start:task3
 ```
+# Task 3. Testing in Node.js
+Unit tests: 
+- src/task4/helpers.test.ts
+- src/task4/services/public-holidays.service.test.ts
+
+Integration tests:
+- src/task4/services/public-holidays.service.integration.test.ts
+
+E2E tests for https://date.nager.at/swagger/index.html:
+- src/task4/services/nager-date-api.e2e.test.ts
+
+![task4-coverage.png](resources/task4-coverage.png)
