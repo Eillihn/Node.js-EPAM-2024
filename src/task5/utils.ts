@@ -1,4 +1,4 @@
-import http from 'http';
+import * as http from 'http';
 import Constants from './constants.js';
 import { User, UserLinks } from './users/model';
 import { HobbiesLinks } from './hobbies/model';
