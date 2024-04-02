@@ -1,5 +1,5 @@
 export default {
   USERS_API_URL: '/api/users/',
   USERS_HOBBIES_API_URL: '/hobbies',
-  PORT: 8001,
+  PORT: 8000,
 };

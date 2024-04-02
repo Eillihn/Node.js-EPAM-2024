@@ -11,11 +11,11 @@
 ### Usage
 To use the `getRandomNumber()` function run in terminal:
 
-```javascript
-node--
-experimental - modules
-const {default: getRandomNumber} = await import("./index.ts");
-getRandomNumber()
+```cmd
+tsc src/task1/index.ts
+node
+const { default: getRandomNumber } = await import("./dist/src/task1/index.js");
+getRandomNumber.default()
 ```
 
 # Task 2. Standard Library
@@ -59,7 +59,7 @@ getRandomNumber()
    ```
 
 ### Usage
-```javascript
+```cmd
 npm run start:task3
 ```
 
@@ -82,6 +82,13 @@ E2E tests for https://date.nager.at/swagger/index.html:
 ### Notes:
 - [swagger.yaml](resources/task5/swagger.yaml)
 - [app.postman_collection.json](resources/task5/app.postman_collection.json)
+
+### How to install pm2: (works on MACOS only)
+```cmd
+npm i pm2 -g  
+pm2 install typescript  
+npm i bun -g
+```
 
 ### Changes:
 - Server is created using http module **src/task5/server.ts**
