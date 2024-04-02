@@ -1,4 +1,4 @@
-import http from 'http';
+import * as http from 'http';
 import { badRequestResponse, getUserIdFromURL, parseRequestBody, setResponseData, unsupportedMethodResponse, userNotExistResponse } from '../utils';
 import { createHobbiesLinks, getUserHobbiesNames, patchUserHobbies } from './service';
 import { createUserLinks, getUser, isUserExist } from '../users/service';

@@ -1,4 +1,4 @@
-import http from 'http';
+import * as http from 'http';
 import Constants from './constants';
 import usersRouter from './users/router';
 import hobbiesRouter from './hobbies/router';

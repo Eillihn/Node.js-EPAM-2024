@@ -80,9 +80,10 @@ E2E tests for https://date.nager.at/swagger/index.html:
 # Task 5. Network
 
 ### Notes:
-[swagger.yaml](resources/task5/swagger.yaml)
-[app.postman_collection.json](resources/task5/app.postman_collection.json)
+- [swagger.yaml](resources/task5/swagger.yaml)
+- [app.postman_collection.json](resources/task5/app.postman_collection.json)
 
+### Changes:
 - Server is created using http module **src/task5/server.ts**
 - Commands to start and stop server are added to package.json: npm run start:task5, npm run stop:task5
 - POST /api/users: create user endpoint is implemented based on Swagger
@@ -92,3 +93,22 @@ E2E tests for https://date.nager.at/swagger/index.html:
 - PATCH /api/users/:userId/hobbies: update user hobbies endpoint is implemented based on Swagger
 - Caching headers were added for getting list of users and hobbies for a specific user
 - Hypermedia links (HATEOAS) are included into responses
+
+# Task 6. Express and Layered Architecture
+
+### Notes:
+- [swagger.yaml](resources/task6/swagger.yaml)
+- [app.postman_collection.json](resources/task6/app.postman_collection.json)
+
+### Changes:
+- Server is created using Express framework **src/task6/index.ts**
+- Commands to start and stop server are added to package.json: npm run start:task6, npm run stop:task6
+- joi is used to validate request bodies
+- Simple authentication middleware is added to check if user with such id exists. User id is passed in x-user-id header
+- Application is implemented following Three Layered Architecture
+- GET /api/profile/cart - get user cart or create if missing endpoint is implemented based on Swagger
+- PUT /api/profile/cart - update user cart is implemented based on Swagger
+- DELETE /api/profile/cart - delete user cart is implemented based on Swagger
+- POST /api/profile/cart/checkout - create an order is implemented based on Swagger
+- GET /api/products - get all products is implemented based on Swagger
+- GET /api/products/{productId} - get single product is implemented based on Swagger
