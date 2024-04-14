@@ -1,8 +1,8 @@
 import express, { Response, Router } from 'express';
 import { getAllProducts, getProduct } from './product.service';
 import { AuthenticatedRequest } from '../utils/models';
-import { ProductEntity } from './product.repository';
 import sendResponse from '../utils/sendResponse';
+import { ProductEntity } from './product.entity';
 
 const productsRouter: Router = express.Router();
 

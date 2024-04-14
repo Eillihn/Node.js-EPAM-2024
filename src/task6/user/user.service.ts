@@ -1,14 +1,5 @@
-import {
-  RegisterUserEntity,
-  createUserEntity,
-  UserEntity,
-  findUserEntityByEmail,
-  LoginUserEntity,
-  findUserEntityPassword,
-  UserPasswordEntity,
-  generateToken,
-  UserToken,
-} from './user.repository';
+import { createUserEntity, findUserEntityByEmail, findUserEntityPassword, generateToken } from './user.repository';
+import { LoginUserEntity, RegisterUserEntity, UserEntity, UserPasswordEntity, UserToken } from './user.entity';
 
 export const createUser = (user: RegisterUserEntity): UserEntity => {
   return createUserEntity(user);

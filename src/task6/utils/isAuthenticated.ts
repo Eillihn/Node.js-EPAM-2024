@@ -1,5 +1,6 @@
-import { findUserEntityById, UserEntity } from '../user/user.repository';
+import { findUserEntityById } from '../user/user.repository';
 import { Request, Response, NextFunction } from 'express';
+import { UserEntity } from '../user/user.entity';
 
 type RequestHeaderValue = string | string[] | undefined;
 
