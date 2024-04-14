@@ -1,4 +1,5 @@
-import { ProductEntity, getProducts, findProduct } from './product.repository';
+import { getProducts, findProduct } from './product.repository';
+import { ProductEntity } from './product.entity';
 
 export const getAllProducts = (): ProductEntity[] => getProducts();
 

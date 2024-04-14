@@ -1,8 +1,8 @@
 import express, { Request, Response, Router } from 'express';
-import { LoginUserEntity, RegisterUserEntity, UserEntity, UserToken } from './user.repository';
 import { createUser, loginUser } from './user.service';
 import { LoginUserSchema, RegisterUserSchema } from '../utils/validation';
 import sendResponse from '../utils/sendResponse';
+import { LoginUserEntity, RegisterUserEntity, UserEntity, UserToken } from './user.entity';
 
 const authRouter: Router = express.Router();
 

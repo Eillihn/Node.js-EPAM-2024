@@ -1,6 +1,7 @@
-import { CartItemEntity, CartEntity, TotalCartEntity, getUserCart, getOrCreateCart, calcTotal, emptyCart, addProductsCart } from './cart.repository';
-import { UserEntity } from '../user/user.repository';
-//addProducts, deleteCart,
+import { getUserCart, getOrCreateCart, calcTotal, emptyCart, addProductsCart } from './cart.repository';
+
+import { UserEntity } from '../user/user.entity';
+import { CartEntity, CartItemEntity, TotalCartEntity } from './cart.entity';
 
 export const getCart = (user: UserEntity) => getUserCart(user);
 

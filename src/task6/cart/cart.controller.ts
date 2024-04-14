@@ -2,13 +2,13 @@ import express, { Router, Response } from 'express';
 import { addProducts, deleteCart, getCart, getTotalCart } from './cart.service';
 import { AuthenticatedRequest } from '../utils/models';
 
-import { AddCartItemEntity, CartEntity } from './cart.repository';
 import { getProduct } from '../product/product.service';
-import { ProductEntity } from '../product/product.repository';
 import { createOrder } from '../order/order.service';
-import { OrderDetailsEntity, OrderEntity } from '../order/order.repository';
 import { AddProductsSchema, CreateOrderSchema } from '../utils/validation';
 import sendResponse from '../utils/sendResponse';
+import { ProductEntity } from '../product/product.entity';
+import { OrderDetailsEntity, OrderEntity } from '../order/order.entity';
+import { AddCartItemEntity, CartEntity } from './cart.entity';
 
 const profileCartRouter: Router = express.Router();
 
@@ -38,9 +38,6 @@ profileCartRouter.put('/', (req: AuthenticatedRequest, res: Response): void => {
 profileCartRouter.delete('/', (req: AuthenticatedRequest, res: Response): void => {
   const isDeleted = deleteCart(req.user!);
   if (isDeleted) {
-    res.send({
-      success: true,
-    });
     sendResponse(
       res,
       200,

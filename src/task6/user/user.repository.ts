@@ -1,70 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
 import jwt from 'jsonwebtoken';
-
-export interface UserEntity {
-  id: string;
-  role: string;
-  email: string;
-}
-
-export interface UserPasswordEntity {
-  userId: string;
-  password: string;
-}
-
-export interface UserToken {
-  token: string;
-}
-
-export interface LoginUserEntity {
-  email: string;
-  password: string;
-}
-
-export type RegisterUserEntity = {
-  email: string;
-  password: string;
-  role: string;
-};
+import { users, passwords, LoginUserEntity, RegisterUserEntity, UserEntity, UserPasswordEntity, UserToken } from './user.entity';
 
 const JWT_SECRET = 'user_jwt_secret';
 const JWT_EXPIRATION = '1d';
-
-const user: UserEntity = {
-  id: '0fe36d16-49bc-4aab-a227-f84df899a6cb',
-  role: 'author',
-  email: 'author@gmail.com',
-};
-const admin: UserEntity = {
-  id: 'admin',
-  role: 'admin',
-  email: 'admin@gmail.com',
-};
-
-const passwords: UserPasswordEntity[] = [
-  {
-    userId: '0fe36d16-49bc-4aab-a227-f84df899a6cb',
-    password: 'qwe',
-  },
-  {
-    userId: 'admin',
-    password: 'admin',
-  },
-  {
-    userId: '1fe36d16-49bc-4aab-a227-f94df899a6cb',
-    password: 'DDQldls?kdpw0fk',
-  },
-];
-
-const users: UserEntity[] = [
-  admin,
-  user,
-  {
-    id: '1fe36d16-49bc-4aab-a227-f94df899a6cb',
-    role: 'author',
-    email: 'ann.jones@epam.com',
-  },
-];
 
 export const findUserEntityById = (userId: string) => users.find((user: UserEntity): boolean => user.id === userId);
 
