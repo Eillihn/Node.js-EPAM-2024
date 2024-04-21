@@ -119,3 +119,9 @@ npm i bun -g
 - POST /api/profile/cart/checkout - create an order is implemented based on Swagger
 - GET /api/products - get all products is implemented based on Swagger
 - GET /api/products/{productId} - get single product is implemented based on Swagger
+
+# Task 7. Databases. NoSQL
+Data storage was moved to NoSQL database:
+- Data is stored in MongoDB database. 
+- Podman is used for local development.
+- All existing endpoints are switched to use MongoDB database.
