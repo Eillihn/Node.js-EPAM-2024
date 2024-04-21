@@ -4,13 +4,14 @@ import { addInitialProducts } from './product/product.service';
 import { addInitialCarts } from './cart/cart.service';
 import { addInitialOrders } from './order/order.service';
 
+const { DB_URI, MONGO_INITDB_ROOT_USERNAME, MONGO_INITDB_ROOT_PASSWORD, DB_NAME } = process.env;
 const uri: string = 'mongodb://localhost:27017';
 
 mongoose
-  .connect(uri, {
-    user: 'root',
-    pass: 'nodegmp',
-    dbName: 'mongodb',
+  .connect(DB_URI || uri, {
+    user: MONGO_INITDB_ROOT_USERNAME,
+    pass: MONGO_INITDB_ROOT_PASSWORD,
+    dbName: DB_NAME,
   })
   .then(() => {
     console.log('Successfully connected to MongoDB');

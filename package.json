@@ -12,7 +12,7 @@
         "stop:task5": "pm2 stop task5-server",
         "start:task6": "pm2 start src/task6/index.ts --name task6-server --watch",
         "stop:task6": "pm2 stop task6-server",
-        "start:task7": "pm2 start src/task7/index.ts --name task7-server --watch",
+        "start:task7": "nodemon --watch \"src/task7/**\" --ext \"ts,json\" --exec \"ts-node src/task7/index.ts\"",
         "stop:task7": "pm2 stop task7-server",
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
