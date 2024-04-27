@@ -8,12 +8,19 @@
     "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "outDir": "./dist",
-    "rootDir": "./"
+    "rootDir": "./src",
+    "declarationDir": "./dist/types",
+    "declaration": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
   },
-  "include": ["**/*.ts"],
+  "include": ["./src/**/*.ts"],
   "exclude":[
-    "./node_modules"
+    "node_modules"
   ]
 }

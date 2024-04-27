@@ -4,7 +4,7 @@ import productsRouter from './product/product.controller';
 import authRouter from './user/user.controller';
 import errorHandler from './utils/errorHandler';
 import { isAuthenticated } from './utils/isAuthenticated';
-import './app';
+import './db';
 
 const app: Express = express();
 
