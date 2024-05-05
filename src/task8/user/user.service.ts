@@ -1,5 +1,5 @@
-import { createUserEntity, findUserEntityByEmail, findUserEntityPassword, generateToken } from './user.repository';
-import { LoginUserEntity, RegisterUserEntity, UserModel, UserPasswordModel, UserToken } from './user.entity';
+import { createUserEntity, findUserEntityByEmail, generateToken } from './user.repository';
+import { LoginUserEntity, RegisterUserEntity, UserModel, UserToken } from './user.entity';
 
 export const createUser = (user: RegisterUserEntity) => createUserEntity(user);
 
@@ -8,8 +8,7 @@ export const loginUser = async (loginUser: LoginUserEntity): Promise<UserToken |
   if (!user) {
     return;
   }
-  const userPassword: UserPasswordModel | null = await findUserEntityPassword(user._id);
-  if (userPassword?.password === loginUser.password) {
+  if (user?.password === loginUser.password) {
     return generateToken(loginUser);
   }
 };

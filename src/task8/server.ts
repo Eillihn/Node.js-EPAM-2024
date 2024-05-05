@@ -13,7 +13,7 @@ import { PostgreSqlDriver } from '@mikro-orm/postgresql';
 import { CartModel } from './cart/cart.entity';
 import { CartItemModel } from './cart/cartItem.entity';
 import { OrderModel } from './order/order.entity';
-import { UserModel, UserPasswordModel } from './user/user.entity';
+import { UserModel } from './user/user.entity';
 import { ProductModel } from './product/product.entity';
 
 export const DI = {} as {
@@ -22,7 +22,6 @@ export const DI = {} as {
   em: EntityManager;
   productRepository: EntityRepository<ProductModel>;
   userRepository: EntityRepository<UserModel>;
-  userPasswordRepository: EntityRepository<UserPasswordModel>;
   cartItemRepository: EntityRepository<CartItemModel>;
   cartRepository: EntityRepository<CartModel>;
   orderRepository: EntityRepository<OrderModel>;
@@ -37,7 +36,6 @@ const init = async (): Promise<void> => {
   DI.em = DI.orm.em;
   DI.productRepository = DI.orm.em.getRepository(ProductModel);
   DI.userRepository = DI.orm.em.getRepository(UserModel);
-  DI.userPasswordRepository = DI.orm.em.getRepository(UserPasswordModel);
   DI.cartItemRepository = DI.orm.em.getRepository(CartItemModel);
   DI.cartRepository = DI.orm.em.getRepository(CartModel);
   DI.orderRepository = DI.orm.em.getRepository(OrderModel);

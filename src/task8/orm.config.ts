@@ -16,9 +16,11 @@ const options: Options<PostgreSqlDriver> = {
   metadataProvider: TsMorphMetadataProvider,
   migrations: {
     path: './dist/task8/migrations',
+    pathTs: './src/task8/migrations',
   },
   seeder: {
     path: './dist/task8/seeders',
+    pathTs: './src/task8/seeders',
   },
   extensions: [Migrator, SeedManager],
 };
