@@ -2,7 +2,7 @@ version: '3'
 services:
   mongo:
     image: "mongo"
-    container_name: "nodegmp-nosql"
+    container_name: "task7"
     restart: always
     env_file:
       - .env

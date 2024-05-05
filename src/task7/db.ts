@@ -3,15 +3,15 @@ import { addInitialUsers } from './user/user.service';
 import { addInitialProducts } from './product/product.service';
 import { addInitialCarts } from './cart/cart.service';
 import { addInitialOrders } from './order/order.service';
+import envConfig from './utils/envConfig';
 
-const { DB_URI, MONGO_INITDB_ROOT_USERNAME, MONGO_INITDB_ROOT_PASSWORD, DB_NAME } = process.env;
 const uri: string = 'mongodb://localhost:27017';
 
 mongoose
-  .connect(DB_URI || uri, {
-    user: MONGO_INITDB_ROOT_USERNAME,
-    pass: MONGO_INITDB_ROOT_PASSWORD,
-    dbName: DB_NAME,
+  .connect(envConfig.DB_URI || uri, {
+    user: envConfig.MONGO_INITDB_ROOT_USERNAME,
+    pass: envConfig.MONGO_INITDB_ROOT_PASSWORD,
+    dbName: envConfig.DB_NAME,
   })
   .then(() => {
     console.log('Successfully connected to MongoDB');

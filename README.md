@@ -1,9 +1,9 @@
 # Node.js EPAM Mentoring program 2024
 
 # Task 1. Introduction to Node.js
-- **src/task1/index.ts**: getRandomNumber() function is exported by default. The function returns a random integer from 1 to 1000;
+- **src/task1/server.ts**: getRandomNumber() function is exported by default. The function returns a random integer from 1 to 1000;
 - nodemon is installed as dev dependency;
-- src/task1/index.ts file is started via npm script command using nodemon;
+- src/task1/server.ts file is started via npm script command using nodemon;
 - NVM is installed. Two versions of Node.js are installed - LTS one and the latest released one.
   ![screen1](resources/task1/screen1.png)
   ![screen2](resources/task1/screen2.png)
@@ -12,7 +12,7 @@
 To use the `getRandomNumber()` function run in terminal:
 
 ```cmd
-tsc src/task1/index.ts
+tsc src/task1/server.ts
 node
 const { default: getRandomNumber } = await import("./dist/src/task1/index.js");
 getRandomNumber.default()
@@ -108,7 +108,7 @@ npm i bun -g
 - [app.postman_collection.json](resources/task6/app.postman_collection.json)
 
 ### Changes:
-- Server is created using Express framework **src/task6/index.ts**
+- Server is created using Express framework **src/task6/server.ts**
 - Commands to start and stop server are added to package.json: npm run start:task6, npm run stop:task6
 - joi is used to validate request bodies
 - Simple authentication middleware is added to check if user with such id exists. User id is passed in x-user-id header
@@ -125,3 +125,11 @@ Data storage was moved to NoSQL database:
 - Data is stored in MongoDB database. 
 - Podman is used for local development.
 - All existing endpoints are switched to use MongoDB database.
+
+# Task 8. Databases. RDBMS
+Data storage was moved to PostgreSQL database:
+- Data is stored in PostgreSQL database.
+- Podman is used for local development.
+- Mikro-ORM is used to query data
+- Migrations are used to create and delete tables
+- Seeds are used to populate database with test data
