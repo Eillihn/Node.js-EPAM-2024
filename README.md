@@ -133,3 +133,17 @@ Data storage was moved to PostgreSQL database:
 - Mikro-ORM is used to query data
 - Migrations are used to create and delete tables
 - Seeds are used to populate database with test data
+
+# Task 9. Authorization and Authentication
+Authorization and authentication flows were added.
+https://jwt.io/#debugger-io
+[app.postman_collection.json.json](resources%2Ftask9%2Fapp.postman_collection.json.json)
+[swagger.yaml](resources%2Ftask6%2Fswagger.yaml)
+
+- User entity is added - contains id (uuid), email (unique), password, role (admin or simple user). Password is stored as hashed value in the database. Bcrypt module is used for hashing passwords.
+- Auth API endpoints are added from Swagger 
+  - Password is not encoded in token payload. JWT token expires in 2 hours.
+- Authentication middleware is added to check if token provided is valid and if user encoded in token exists 
+  - JWT token is passed in Authorization header for each request (except sign in and sign up) in the following format Authorization: Bearer <token>
+  - If token is not provided, 401 status code should be returned. If there is no such a user, 403 status code should be returned.
+- Only admin users can delete user cart. Authorization middleware is added for this purpose. If token provided doesn't belong to admin member, 403 Forbidden status code is returned.
