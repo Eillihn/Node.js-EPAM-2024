@@ -1,0 +1,10 @@
+version: '3'
+services:
+  postgres-db:
+    image: "postgres:12"
+    container_name: "task8"
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - '5432:5432'

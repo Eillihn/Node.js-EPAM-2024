@@ -16,8 +16,9 @@
         "stop:task7": "pm2 stop task7-server",
         "start:task8:migartion:up": "tsc && npx mikro-orm migration:up",
         "start:task8:migartion:down": "tsc && npx mikro-orm migration:down",
-        "start:task8:seeds": "tsc && npx mikro-orm seeder:run --class=InitialUsersSeeder && npx mikro-orm seeder:run --class=InitialProductsSeeder && npx mikro-orm seeder:run --class=InitialCartsSeeder",
+        "start:task8:seeds": "tsc && npx mikro-orm seeder:run --class=InitialUsersSeeder && npx mikro-orm seeder:run --class=InitialCartsSeeder",
         "start:task8:app": "nodemon --watch \"src/task8/**\" --ext \"ts,json\" --exec \"ts-node src/task8/server.ts\"",
+        "start:task9": "nodemon --watch \"src/task9/**\" --ext \"ts,json\" --exec \"ts-node src/task9/server.ts\"",
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
         "test": "jest --testPathIgnorePatterns .e2e.test.ts",
@@ -27,7 +28,7 @@
     "mikro-orm": {
         "useTsNode": true,
         "configPaths": [
-            "./src/task8/orm.config.ts"
+            "./src/task9/orm.config.ts"
         ]
     },
     "repository": {
@@ -44,6 +45,7 @@
     "devDependencies": {
         "@mikro-orm/migrations": "^6.2.3",
         "@mikro-orm/seeder": "^6.2.3",
+        "@types/bcryptjs": "^2.4.6",
         "@types/express": "^4.17.21",
         "@types/jest": "^29.5.12",
         "@types/joi": "^17.2.3",
@@ -75,6 +77,7 @@
         "@mikro-orm/postgresql": "^6.2.3",
         "@mikro-orm/reflection": "^6.2.3",
         "axios": "^1.6.8",
+        "bcryptjs": "^2.4.3",
         "csvtojson": "^2.0.10",
         "dotenv": "^16.4.5",
         "express": "^4.19.2",
