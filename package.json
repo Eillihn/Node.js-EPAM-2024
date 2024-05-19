@@ -14,11 +14,17 @@
         "stop:task6": "pm2 stop task6-server",
         "start:task7": "nodemon --watch \"src/task7/**\" --ext \"ts,json\" --exec \"ts-node src/task7/index.ts\"",
         "stop:task7": "pm2 stop task7-server",
-        "start:task8:migartion:up": "tsc && npx mikro-orm migration:up",
-        "start:task8:migartion:down": "tsc && npx mikro-orm migration:down",
+        "start:task8:migration:up": "tsc && npx mikro-orm migration:up",
+        "start:task8:migration:down": "tsc && npx mikro-orm migration:down",
         "start:task8:seeds": "tsc && npx mikro-orm seeder:run --class=InitialUsersSeeder && npx mikro-orm seeder:run --class=InitialCartsSeeder",
         "start:task8:app": "nodemon --watch \"src/task8/**\" --ext \"ts,json\" --exec \"ts-node src/task8/server.ts\"",
         "start:task9": "nodemon --watch \"src/task9/**\" --ext \"ts,json\" --exec \"ts-node src/task9/server.ts\"",
+        "start:task10:migration:up": "npx mikro-orm migration:up --config ./dist/task10/orm.config.js",
+        "start:task10:migration:down": "npx mikro-orm migration:down --config ./dist/task10/orm.config.js",
+        "start:task10:seeds": "npx mikro-orm --config ./dist/task10/orm.config.js seeder:run --class=InitialUsersSeeder && npx mikro-orm --config ./dist/task10/orm.config.js seeder:run --class=InitialCartsSeeder && npx mikro-orm --config ./dist/task10/orm.config.js seeder:run --class=InitialProductsSeeder",
+        "start:task10:test": "set NODE_ENV=test && nodemon --watch \"src/task10/**\" --ext \"ts,json\" --exec \"ts-node src/task10/server.ts\"",
+        "start:task10": "set NODE_ENV=production && node \"dist/task10/server.js\"",
+        "build": "tsc",
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
         "test": "jest --testPathIgnorePatterns .e2e.test.ts",
@@ -51,9 +57,11 @@
         "@types/joi": "^17.2.3",
         "@types/jsonwebtoken": "^9.0.6",
         "@types/mongoose": "^5.11.97",
+        "@types/morgan": "^1.9.9",
         "@types/node": "^20.11.26",
         "@types/supertest": "^6.0.2",
         "@types/uuid": "^9.0.8",
+        "@types/winston": "^2.4.4",
         "@typescript-eslint/eslint-plugin": "^7.3.1",
         "@typescript-eslint/parser": "^7.3.1",
         "eslint": "^8.57.0",
@@ -69,7 +77,7 @@
         "ts-jest": "^29.1.2",
         "ts-node": "^10.9.2",
         "tsx": "^4.7.1",
-        "typescript": "^5.4.2"
+        "typescript": "^5.4.5"
     },
     "dependencies": {
         "@mikro-orm/cli": "^6.2.2",
@@ -84,8 +92,10 @@
         "joi": "^17.12.2",
         "jsonwebtoken": "^9.0.2",
         "mongoose": "^8.3.1",
+        "morgan": "^1.10.0",
         "nodemon": "^3.1.0",
         "pg": "^8.11.5",
-        "uuid": "^9.0.1"
+        "uuid": "^9.0.1",
+        "winston": "^3.13.0"
     }
 }

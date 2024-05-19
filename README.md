@@ -147,3 +147,20 @@ https://jwt.io/#debugger-io
   - JWT token is passed in Authorization header for each request (except sign in and sign up) in the following format Authorization: Bearer <token>
   - If token is not provided, 401 status code should be returned. If there is no such a user, 403 status code should be returned.
 - Only admin users can delete user cart. Authorization middleware is added for this purpose. If token provided doesn't belong to admin member, 403 Forbidden status code is returned.
+
+# Task 10. Deployment and automation tools
+
+1. Application has proper config management: environment variables are used instead of any hardcoded values
+2. Graceful shutdown is implemented
+3. Healthcheck API endpoint is implemented. It checks if server is running and if connection with database is established. It returns status code 200 if everything is ok, otherwise 500.
+4. Winston is used for all application logs. All logs are reviewed, proper log levels are set for all of them. Application logs are written to console.
+5. Logging of incoming requests is added: it contains date, log level, request method, request path and request duration. The format is the following: [Mon, 01 Jan 2024 14:00:00] INFO GET /api/profile/cart - 112ms
+6. Update npm the scripts for running application to support production and non-productions environments.
+   If NODE_ENV=production, no DEBUG logs are printed
+   If NODE_ENV=test, all logs are printed
+7. Dockerize the application according to best practices, try getting an image with as minimal size as possible.
+
+```cmd
+podman network create app-network
+podman compose -f podman-compose.yml up -d --build 
+```
